@@ -13,7 +13,7 @@
 ### Copie e cole no terminal SSH:
 
 ```bash
-wget https://raw.githubusercontent.com/augustofreires/Zapconverse/main/install.sh && chmod +x install.sh && sudo ./install.sh
+wget https://raw.githubusercontent.com/zapconverse/zapconverse/main/install.sh && chmod +x install.sh && sudo ./install.sh
 ```
 
 **Pronto!** O script vai:
@@ -148,8 +148,8 @@ pm2 logs --error
 
 ## 📞 Suporte
 
-- **GitHub:** https://github.com/augustofreires/Zapconverse
-- **Issues:** https://github.com/augustofreires/Zapconverse/issues
+- **GitHub:** https://github.com/zapconverse/zapconverse
+- **Issues:** https://github.com/zapconverse/zapconverse/issues
 
 ---
 

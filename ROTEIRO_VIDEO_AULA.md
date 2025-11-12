@@ -65,7 +65,7 @@ que já faz tudo pra gente."
 
 #### 3.1 Download do Script
 ```bash
-wget https://raw.githubusercontent.com/augustofreires/Zapconverse/main/install-aapanel.sh
+wget https://raw.githubusercontent.com/zapconverse/zapconverse/main/install-aapanel.sh
 ```
 
 ```
@@ -409,7 +409,7 @@ Use o cupom PRIMEIRA-VENDA para 20% de desconto!"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📚 DOCUMENTAÇÃO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📖 Docs: https://github.com/augustofreires/Zapconverse
+📖 Docs: https://github.com/zapconverse/zapconverse
 🎛️ Instalação aaPanel: [link]
 🔧 Troubleshooting: [link]
 
@@ -417,7 +417,7 @@ Use o cupom PRIMEIRA-VENDA para 20% de desconto!"
 💬 SUPORTE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 👥 Grupo VIP: [link-telegram]
-🐛 Issues: https://github.com/augustofreires/Zapconverse/issues
+🐛 Issues: https://github.com/zapconverse/zapconverse/issues
 📧 Email: suporte@zapconverse.com
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

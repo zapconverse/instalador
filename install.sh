@@ -120,7 +120,7 @@ if [ -d "zapconverse" ]; then
     cd zapconverse
     git pull origin main
 else
-    git clone https://github.com/augustofreires/Zapconverse.git zapconverse
+    git clone https://github.com/zapconverse/zapconverse.git zapconverse
 fi
 cd zapconverse
 chown -R deploy:deploy /home/deploy/zapconverse

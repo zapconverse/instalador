@@ -101,7 +101,7 @@
 ### Instalação Rápida (1 comando)
 
 ```bash
-wget https://raw.githubusercontent.com/augustofreires/Zapconverse/main/install.sh && chmod +x install.sh && sudo ./install.sh
+wget https://raw.githubusercontent.com/zapconverse/zapconverse/main/install.sh && chmod +x install.sh && sudo ./install.sh
 ```
 
 ⏱️ **Tempo:** 10-15 minutos | **O que faz:** Instala tudo automaticamente
@@ -307,7 +307,7 @@ sudo ufw enable
 ## 🆘 Suporte
 
 ### Encontrou um bug?
-Abra uma issue: [GitHub Issues](https://github.com/augustofreires/Zapconverse/issues)
+Abra uma issue: [GitHub Issues](https://github.com/zapconverse/zapconverse/issues)
 
 ### Precisa de ajuda?
 - 📧 Email: suporte@zapconverse.com
@@ -355,12 +355,12 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Desenvolvedores
 
-**Augusto Freires**
+**Zapconverse Team**
 
-- GitHub: [@augustofreires](https://github.com/augustofreires)
-- LinkedIn: [Augusto Freires](https://linkedin.com/in/augustofreires)
+- GitHub: [@zapconverse](https://github.com/zapconverse)
+- Website: [zapconverse.com](https://zapconverse.com)
 
 ---
 
@@ -386,7 +386,7 @@ Se este projeto te ajudou, considere dar uma ⭐!
 
 <div align="center">
 
-**Desenvolvido com ❤️ por [Augusto Freires](https://github.com/augustofreires)**
+**Desenvolvido com ❤️ por [Zapconverse Team](https://github.com/zapconverse)**
 
 [⬆ Voltar ao topo](#-zapconverse)
 

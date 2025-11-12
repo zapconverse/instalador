@@ -135,7 +135,7 @@ cd /www/wwwroot 2>/dev/null || cd /home
 if [ -d "Zapconverse" ]; then
     rm -rf Zapconverse
 fi
-git clone https://github.com/augustofreires/Zapconverse.git > /dev/null 2>&1
+git clone https://github.com/zapconverse/zapconverse.git > /dev/null 2>&1
 cd Zapconverse/zapconverse
 print_success "Projeto baixado"
 

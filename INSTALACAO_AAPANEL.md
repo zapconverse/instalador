@@ -115,7 +115,7 @@ pm2 startup systemd
 ### 6.1 No Terminal do aaPanel:
 ```bash
 cd /www/wwwroot
-git clone https://github.com/augustofreires/Zapconverse.git
+git clone https://github.com/zapconverse/zapconverse.git
 cd Zapconverse/zapconverse
 ```
 
@@ -410,7 +410,7 @@ Seu Zapconverse está rodando com aaPanel!
 
 ## 📞 Suporte
 
-- **GitHub:** https://github.com/augustofreires/Zapconverse
-- **Issues:** https://github.com/augustofreires/Zapconverse/issues
+- **GitHub:** https://github.com/zapconverse/zapconverse
+- **Issues:** https://github.com/zapconverse/zapconverse/issues
 
 **Boa sorte! 🚀**
