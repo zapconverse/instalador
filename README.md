@@ -168,7 +168,6 @@ wget -O install.sh http://www.aapanel.com/script/install-ubuntu_6.0_en.sh && sud
 - [⚡ Instalação Simples](INSTALACAO_SIMPLES.md) - **Recomendado**
 - [🎨 Customização Visual](CUSTOMIZACAO_VISUAL.md) - **Para seus clientes**
 - [🎛️ Instalação com aaPanel](INSTALACAO_AAPANEL.md) - Instalação completa
-- [🎬 Roteiro de Vídeo-Aula](ROTEIRO_VIDEO_AULA.md) - Para gravação
 
 ### Configurações Avançadas
 - [Instalação do Nginx](zapconverse/NGINX_SETUP.md)
