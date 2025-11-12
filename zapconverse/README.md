@@ -1,175 +1,217 @@
-# Zapconverse
+# 🚀 Zapconverse - Instalador Automático
 
-O Zapconverse é uma solução completa de atendimentos via WhatsApp que aumenta a produtividade e organização das equipes
+Sistema de atendimento multicanal com WhatsApp integrado.
 
-## 🚀 Começando
+## 📋 Sobre o Instalador
 
-O repositório do Zapconverse possui 2 pastas principais:
-- backend
-- frontend
+Este repositório contém o **instalador automático** do Zapconverse, permitindo instalação e gerenciamento completo do sistema através de um menu interativo.
 
-O backend é feito em Express e possui toda a estrutura organizada dentro dessa pasta para que seja aplicado no ambiente do cliente. A pasta de frontend contém todo o framework do React.js que gerencia toda a interação com o usuário do sistema.
+## ✨ Funcionalidades
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+- ✅ **Instalação automática** de todas as dependências
+- ✅ **Menu interativo** para gerenciamento
+- ✅ **Multi-instâncias** no mesmo servidor
+- ✅ **Configuração de SSL** automática
+- ✅ **Gerenciamento de domínios**
+- ✅ **Bloqueio/Desbloqueio** de instâncias
 
-### 📋 Pré-requisitos
+## 🛠️ Pré-requisitos
 
-```
-- Node.js v20.x
-- Postgres (release)
-- Npm ( latest )
-- Docker (bionic stable)
-- Redis
-```
+- Ubuntu 20.04 ou 22.04
+- Acesso root via SSH
+- Mínimo 2GB RAM (recomendado 4GB)
+- Domínios apontados para o servidor (para SSL)
 
-### 🔧 Instalação
+## 📦 Instalação Rápida
 
-Para iniciar a instalação do projeto é necessário ter todas as ferramentas de pré-requisitos disponíveis para uso
-
-#### Redis
-```
-- su - root
-- docker run --name redis-${instancia_add} -p ${redis_port}:6379 --restart always --detach redis redis-server --requirepass ${root_password}
+### 1️⃣ Acessar servidor via SSH
+```bash
+ssh root@SEU_IP
 ```
 
-#### Postgres
-```
-- sudo su - postgres
-- createdb ${instancia_add};
-- psql
-- CREATE USER ${instancia_add} SUPERUSER INHERIT CREATEDB CREATEROLE;
-- ALTER USER ${instancia_add} PASSWORD '${root_password}';
-```
+### 2️⃣ Baixar o instalador
 
-#### .env backend
-```
-NODE_ENV=
-BACKEND_URL=${backend_url}
-FRONTEND_URL=${frontend_url}
-PROXY_PORT=443
-PORT=${backend_port}
-
-DB_DIALECT=postgres
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=${instancia_add}
-DB_PASS=${mysql_root_password}
-DB_NAME=${instancia_add}
-
-JWT_SECRET=${jwt_secret}
-JWT_REFRESH_SECRET=${jwt_refresh_secret}
-
-REDIS_URI=redis://:${mysql_root_password}@127.0.0.1:${redis_port}
-REDIS_OPT_LIMITER_MAX=1
-REGIS_OPT_LIMITER_DURATION=3000
-
-USER_LIMIT=${max_user}
-CONNECTIONS_LIMIT=${max_whats}
-CLOSED_SEND_BY_ME=true
-
-GERENCIANET_SANDBOX=false
-GERENCIANET_CLIENT_ID=Client_Id_Gerencianet
-GERENCIANET_CLIENT_SECRET=Client_Secret_Gerencianet
-GERENCIANET_PIX_CERT=certificado-Gerencianet
-GERENCIANET_PIX_KEY=chave pix gerencianet
-
-# EMAIL
- MAIL_HOST="smtp.gmail.com"
- MAIL_USER="seu@gmail.com"
- MAIL_PASS="SuaSenha"
- MAIL_FROM="seu@gmail.com"
- MAIL_PORT="465"
-
+**Opção 1:** Se o repositório for público:
+```bash
+cd /home
+git clone https://github.com/zapconverse/instalador.git
+cd instalador
 ```
 
-#### .env frontend
-```
-REACT_APP_BACKEND_URL=${backend_url}
-REACT_APP_HOURS_CLOSE_TICKETS_AUTO = 24
-```
-
-#### Instalando dependências
-```
-cd backend/
-npm install --force
-cd frontend/
-npm install --force
+**Opção 2:** Se o repositório for privado (substitua SEU_TOKEN):
+```bash
+cd /home
+git clone https://zapconverse:SEU_TOKEN@github.com/zapconverse/instalador.git
+cd instalador
 ```
 
-### Rodando localmente
-```
-cd backend/
-npm run watch
-npm start
-
-cd frontend/
-npm start
+### 3️⃣ Dar permissões
+```bash
+chmod -R 777 instalador
 ```
 
-## ⚙️ Executando os testes
-
-//
-
-### 🔩 Analise os testes de ponta a ponta
-
-//
-
-## 📦 Implantação em produção
-
-Para correta implantação é necessário realizar uma atualização do código fonte da aplicação e criar novamente os arquivos da pasta dist/
-
-Atenção: é necessário acessar utilizando o usuário de deploy
-
-```
-su - deploy
+### 4️⃣ Executar instalador
+```bash
+./install_primaria
 ```
 
-```
-cd /home/deploy/${empresa_atualizar}
-pm2 stop ${empresa_atualizar}-frontend
-git pull
-cd /home/deploy/${empresa_atualizar}/frontend
-npm install
-rm -rf build
-npm run build
-pm2 start ${empresa_atualizar}-frontend
-pm2 save
-```
+## 📱 Menu Interativo
+
+Após executar o instalador, você verá o menu:
 
 ```
-cd /home/deploy/${empresa_atualizar}
-pm2 stop ${empresa_atualizar}-backend
-git pull
-cd /home/deploy/${empresa_atualizar}/backend
-npm install
-npm update -f
-npm install @types/fs-extra
-rm -rf dist 
-npm run build
-npx sequelize db:migrate
-npx sequelize db:migrate
-npx sequelize db:seed
-pm2 start ${empresa_atualizar}-backend
-pm2 save 
+╔══════════════════════════════════════════╗
+║          ZAPCONVERSE                     ║
+╚══════════════════════════════════════════╝
+
+💻 Bem vindo(a) ao Gerenciador Zapconverse
+
+[0] Instalar Zapconverse
+[1] Atualizar Zapconverse
+[2] Deletar Zapconverse
+[3] Bloquear Zapconverse
+[4] Desbloquear Zapconverse
+[5] Alter. domínio Zapconverse
 ```
 
-## 🛠️ Construído com
+## 🎯 Opções do Menu
 
+### [0] Instalar
+Instala uma nova instância do Zapconverse. Durante a instalação será solicitado:
 
-* [Express](https://expressjs.com/pt-br/) - O framework backend usado
-* [React](https://react.dev/) - Framework frontend usado
-* [NPM](https://www.npmjs.com/) - Gerenciador de dependências
+- **Senha do banco de dados**
+- **Nome da instância** (sem espaços ou caracteres especiais)
+- **Quantidade de conexões WhatsApp**
+- **Quantidade de usuários/atendentes**
+- **Domínio do frontend** (ex: app.seudominio.com)
+- **Domínio do backend** (ex: api.seudominio.com)
+- **Porta do frontend** (ex: 3000-3999)
+- **Porta do backend** (ex: 4000-4999)
+- **Porta do Redis** (ex: 5000-5999)
 
-## 🖇️ Colaborando
+### [1] Atualizar
+Atualiza uma instância existente para a versão mais recente do código.
 
-//
+### [2] Deletar
+Remove completamente uma instância do servidor (banco de dados, arquivos, etc).
 
-## 📌 Versão
+### [3] Bloquear
+Bloqueia temporariamente o acesso a uma instância.
 
-Versão 1.0.0
+### [4] Desbloquear
+Desbloqueia uma instância previamente bloqueada.
+
+### [5] Alterar domínio
+Permite alterar os domínios (frontend/backend) de uma instância existente.
+
+## 📂 Estrutura do Projeto
+
+```
+instalador/
+├── install_primaria         # Script principal com menu
+├── install_instancia        # Instalação de instâncias adicionais
+├── lib/                     # Bibliotecas de funções
+│   ├── _inquiry.sh         # Menu interativo
+│   ├── _system.sh          # Instalação de dependências
+│   ├── _backend.sh         # Configuração backend
+│   └── _frontend.sh        # Configuração frontend
+├── utils/                   # Utilitários
+│   └── _banner.sh          # Banner ASCII
+└── variables/               # Variáveis e configurações
+    ├── _fonts.sh           # Cores do terminal
+    └── _app.sh             # Variáveis da aplicação
+```
+
+## 🔧 Comandos Úteis
+
+### Ver logs
+```bash
+pm2 logs nome-da-instancia-backend
+pm2 logs nome-da-instancia-frontend
+```
+
+### Reiniciar serviços
+```bash
+pm2 restart nome-da-instancia-backend
+pm2 restart nome-da-instancia-frontend
+```
+
+### Ver status
+```bash
+pm2 status
+```
+
+### Verificar portas em uso
+```bash
+netstat -tuln | grep :PORTA
+```
+
+## 🌐 Multi-Instâncias
+
+É possível instalar múltiplas instâncias no mesmo servidor:
+
+1. Execute `./install_primaria`
+2. Escolha opção **[0] Instalar**
+3. Use **nome diferente** para cada instância
+4. Use **portas diferentes** (ex: 3000, 4000, 5000 para instância 1 / 3001, 4001, 5001 para instância 2)
+5. Configure **domínios diferentes**
+
+## 🔐 Configuração SSL
+
+O instalador configura SSL automaticamente via Certbot quando você fornece domínios válidos.
+
+**Importante:**
+- Os domínios devem estar apontando para o IP do servidor (DNS configurado)
+- Certbot irá validar o domínio antes de emitir o certificado
+- Certificados são renovados automaticamente
+
+## 📝 Dependências Instaladas
+
+O instalador configura automaticamente:
+
+- ✅ Node.js 20.x
+- ✅ PostgreSQL
+- ✅ Redis (via Docker)
+- ✅ PM2 (gerenciador de processos)
+- ✅ Nginx (proxy reverso)
+- ✅ Certbot (SSL)
+- ✅ Puppeteer dependencies
+
+## 🆘 Troubleshooting
+
+### Erro de permissão
+```bash
+chmod +x install_primaria
+```
+
+### Porta já em uso
+```bash
+# Verificar processo usando a porta
+lsof -i :PORTA
+# Matar processo
+kill -9 PID
+```
+
+### Nginx não inicia
+```bash
+sudo nginx -t          # Testar configuração
+sudo systemctl restart nginx
+```
+
+### PM2 não encontrado
+```bash
+npm install -g pm2
+```
+
+## 📞 Suporte
+
+- **GitHub Issues:** https://github.com/zapconverse/instalador/issues
+- **Documentação:** https://github.com/zapconverse/instalador
 
 ## 📄 Licença
 
-Este projeto está sob a licença
+Este projeto está sob a licença MIT.
 
-⌨️ Desenvolvido com ❤️ para gestão de atendimentos via WhatsApp
+---
+
+**2025 © Zapconverse - Todos os direitos reservados**
