@@ -28,8 +28,7 @@ printf "  ##     ##  ##   ##        ######   ######   ##  ##     ##     ######  
 
 printf "\n"
 
-printf "Solicite suporte: https://github.com/zapconverse/instalador/issues\n"
-printf "Documentação: https://github.com/zapconverse/instalador\n"
+printf "Solicite suporte: https://zapconverse.com.br/suporte\n"
 printf "2025 @ Todos os direitos reservados a Zapconverse\n"
 
 
