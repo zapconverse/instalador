@@ -9,16 +9,18 @@ import { TicketsContextProvider } from "../context/Tickets/TicketsContext";
 import { WhatsAppsProvider } from "../context/WhatsApp/WhatsAppsContext";
 import Route from "./Route";
 
-// Lazy load all page components
-const Dashboard = lazy(() => import("../pages/Dashboard/"));
-const TicketResponsiveContainer = lazy(() => import("../pages/TicketResponsiveContainer"));
+// Eager load - páginas principais (carregam imediatamente)
+import Dashboard from "../pages/Dashboard/";
+import TicketResponsiveContainer from "../pages/TicketResponsiveContainer";
+import Connections from "../pages/Connections/";
+import Contacts from "../pages/Contacts/";
+
+// Lazy load - páginas secundárias (carregam sob demanda)
 const Signup = lazy(() => import("../pages/Signup/"));
 const Login = lazy(() => import("../pages/Login/"));
-const Connections = lazy(() => import("../pages/Connections/"));
 const SettingsCustom = lazy(() => import("../pages/SettingsCustom/"));
 const Financeiro = lazy(() => import("../pages/Financeiro/"));
 const Users = lazy(() => import("../pages/Users"));
-const Contacts = lazy(() => import("../pages/Contacts/"));
 const Queues = lazy(() => import("../pages/Queues/"));
 const Tags = lazy(() => import("../pages/Tags/"));
 const MessagesAPI = lazy(() => import("../pages/MessagesAPI/"));
