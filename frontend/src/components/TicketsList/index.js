@@ -82,7 +82,7 @@ const reducer = (state, action) => {
 		const newTickets = action.payload;
 
 		newTickets.forEach((ticket) => {
-			const ticketIndex = state.findIndex((t) => t.id === ticket.id);
+			const ticketIndex = state.findIndex((t) => +t.id === +ticket.id);
 			if (ticketIndex !== -1) {
 				state[ticketIndex] = ticket;
 				if (ticket.unreadMessages > 0) {
@@ -99,7 +99,7 @@ const reducer = (state, action) => {
 	if (action.type === "RESET_UNREAD") {
 		const ticketId = action.payload;
 
-		const ticketIndex = state.findIndex((t) => t.id === ticketId);
+		const ticketIndex = state.findIndex((t) => +t.id === +ticketId);
 		if (ticketIndex !== -1) {
 			state[ticketIndex].unreadMessages = 0;
 		}
@@ -110,7 +110,7 @@ const reducer = (state, action) => {
 	if (action.type === "UPDATE_TICKET") {
 		const ticket = action.payload;
 
-		const ticketIndex = state.findIndex((t) => t.id === ticket.id);
+		const ticketIndex = state.findIndex((t) => +t.id === +ticket.id);
 		if (ticketIndex !== -1) {
 			state[ticketIndex] = ticket;
 		} else {
@@ -123,7 +123,7 @@ const reducer = (state, action) => {
 	if (action.type === "UPDATE_TICKET_UNREAD_MESSAGES") {
 		const ticket = action.payload;
 
-		const ticketIndex = state.findIndex((t) => t.id === ticket.id);
+		const ticketIndex = state.findIndex((t) => +t.id === +ticket.id);
 		if (ticketIndex !== -1) {
 			state[ticketIndex] = ticket;
 			state.unshift(state.splice(ticketIndex, 1)[0]);
@@ -136,7 +136,7 @@ const reducer = (state, action) => {
 
 	if (action.type === "UPDATE_TICKET_CONTACT") {
 		const contact = action.payload;
-		const ticketIndex = state.findIndex((t) => t.contactId === contact.id);
+		const ticketIndex = state.findIndex((t) => +t.contactId === +contact.id);
 		if (ticketIndex !== -1) {
 			state[ticketIndex].contact = contact;
 		}
@@ -145,7 +145,7 @@ const reducer = (state, action) => {
 
 	if (action.type === "DELETE_TICKET") {
 		const ticketId = action.payload;
-		const ticketIndex = state.findIndex((t) => t.id === ticketId);
+		const ticketIndex = state.findIndex((t) => +t.id === +ticketId);
 		if (ticketIndex !== -1) {
 			state.splice(ticketIndex, 1);
 		}
