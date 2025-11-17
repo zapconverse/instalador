@@ -30,7 +30,7 @@ printf "╚═══════════════════════
 printf "${NC}"
 printf "\n"
 
-printf "Solicite suporte: https://zapconverse.com.br/suporte\n"
+printf "Solicite suporte: https://zapconverse.com/suporte\n"
 printf "2025 @ Todos os direitos reservados a Zapconverse\n"
 
 
